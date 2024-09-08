@@ -1,0 +1,279 @@
+input, button {
+    padding: 10px;
+    border: 2px solid #00ff00;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #00ff00;
+}
+
+button:hover {
+    background-color: #00ff00;
+    color: black;
+    cursor: pointer;
+}
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    list-style: none;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+    color: var(--text-color);
+    height: 100vh;
+    width:auto;
+}
+:root{
+    --background-color:rgb(172, 192, 172);
+    --text-color:white;
+
+}
+header{
+    position:sticky;
+    z-index: 100;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 10%;
+}
+@keyframes color1{
+    0%{
+     color: rgb(255, 0, 0);
+    }
+    50%{
+     color: rgb(1, 246, 1);
+    }
+    100%{
+     color: rgb(13, 251, 251);
+}}
+.logo{
+    font-size: 1.6rem;
+    font-weight: 800;
+    transition: 0.3s ease-in;
+    color:var(--text-color);
+    animation-name: color1;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    letter-spacing: 1.1rem;
+}
+.logo:hover{
+    transform:scale(1.1);
+   letter-spacing: normal;
+}
+
+ 
+span{
+    color:aqua
+}
+.navlist{
+    display: flex;
+}
+.navlist a{
+    padding: 20px;
+    font-size: 130%;
+    color:var(--text-color);
+    transition: 0.3s ease-in;
+    border-bottom: 3px solid transparent;
+    
+}
+#head h1{
+    animation-name: color;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    text-shadow: 0px 0px 10px  rgb(0, 144, 246),
+    0px 0px 20px  rgb(0, 144, 246),
+    0px 0px 30px  rgb(0, 144, 246),
+    0px 0px 40px  rgb(0, 144, 246),
+    0px 0px 50px  rgb(0, 144, 246),
+    0px 0px 60px  rgb(0, 144, 246),
+    0px 0px 70px  rgb(0, 144, 246),
+    0px 0px 80px  rgb(0, 144, 246),
+    0px 0px 90px  rgb(0, 144, 246)
+}
+
+#accept{
+    animation-name: color;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    color: aqua;
+    
+    text-shadow: 0px 0px 10px  rgb(12, 242, 0),
+    0px 0px 20px  rgb(0, 199, 10),
+    0px 0px 30px  rgb(16, 246, 0),
+    0px 0px 40px  rgb(41, 246, 0),
+    0px 0px 50px  rgb(53, 246, 0),
+    0px 0px 60px  rgb(41, 246, 0),
+    0px 0px 70px  rgb(205, 246, 0),
+    0px 0px 80px  rgb(253, 254, 255),
+    0px 0px 90px  rgb(0, 246, 16)
+}
+@keyframes color{
+   0%{
+    color: rgb(246, 246, 246);
+   }
+   50%{
+    color: rgb(1, 181, 246);
+   }
+   100%{
+    color: azure;
+   }
+
+}
+.btn{
+
+    text-align: center;
+    width: 100vw;
+    height:100vh;
+
+    
+
+}
+.btn button{
+    border: none;
+    box-shadow: 0 0 25px rgb(214, 208, 208);
+    width: 100px;
+    height: 100px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-left: 3rem;
+    border-radius: 20px;
+     animation-name: spin;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    
+}
+.btn button:hover{
+    background-color:rgb(0, 255, 21);
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    /* animation-name: spin1;
+    animation-duration: 5s;
+    animation-fill-mode: forwards; */
+}
+
+#head {
+    color: rgb(246, 246, 246);
+    text-align: center;
+    padding: 3rem;
+    letter-spacing: .3rem;
+    line-height: 2rem;
+}
+#no{
+    cursor:not-allowed;
+    
+    animation-name: spin1;
+    animation-duration: 5s;
+    animation-fill-mode: reverse;
+}
+#no:hover{
+    background-color: red;
+    color: white;
+    cursor:not-allowed;
+}
+
+@keyframes spin{
+    0%{
+
+    }
+    30%{
+        scale:1.4;
+        transform: rotate(0deg);
+        border-radius: 0;
+    }
+    60%{
+        transform: rotate(360deg);
+        transform-origin:right;
+        background-color: rgb(255, 255, 0);
+        border-radius: 50%;
+    }
+    100%{
+        transform: rotate(360deg);
+        border-radius: 50%;
+        background-color: aqua;
+    }
+}
+ @keyframes spin1{
+    0%{
+
+    }
+    30%{
+        scale:1.4;
+        transform: rotate(0deg);
+        border-radius: 0;
+    }
+    60%{
+        transform: rotate(360deg);
+        transform-origin:left;
+        background-color: beige;
+        border-radius: 50%;
+    }
+    100%{
+        transform: rotate(360deg);
+        border-radius: 50%;
+        background-color: aqua;
+    }
+}
+footer{
+    text-align: center;
+    padding: 2rem;
+    background-color: rgb(7, 7, 7);
+    letter-spacing: 2px;
+    font-style: oblique;
+    font-size: 130%;
+    width: 100%;
+    animation-name: color1;
+    animation-duration: 9s;
+    transition: all ;
+    animation-iteration-count: infinite;
+    font-weight: bold;
+}
+footer:hover{
+    letter-spacing: 2rem;
+}
+@keyframes color1{
+   0%{
+    color: rgb(246, 246, 246);
+   }
+   10%{
+    color: rgb(0, 0, 0);
+   }
+     20%{
+    color: rgb(115, 246, 1);
+   }
+     30%{
+    color: rgb(5, 5, 5);
+   }
+     40%{
+    color: rgb(246, 1, 189);
+   }
+     50%{
+    color: rgb(246, 1, 1);
+   }
+     60%{
+    color: rgb(5, 5, 5);
+   }
+     70%{
+    color: rgb(237, 237, 237);
+   }
+     80%{
+    color: rgb(0, 221, 107);
+   }
+     90%{
+    color: rgb(5, 9, 10);
+   }
+     10%{
+    color: rgb(1, 181, 246);
+   }
+   100%{
+    color: azure;
+   }

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOve</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        async function submitLoveRequest() {
+            const name = prompt('Enter your name:');
+            const phoneNumber = prompt('Enter your phone number:');
+            
+            if (name && phoneNumber) {
+                const userData = { name, phoneNumber };
+                
+                try {
+                    const response = await fetch('http://localhost:3000/api/users', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(userData)
+                    });
+
+                    if (response.ok) {
+                        document.getElementById('accept').innerHTML = 'Thanks for Accepting my Love';
+                    } else {
+                        alert('Failed to submit data');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('An error occurred');
+                }
+            } else {
+                alert('Name and phone number are required');
+            }
+        }
+
+        function moveNoButton() {
+            const noButton = document.getElementById('no');
+            noButton.style.position = 'absolute';
+            noButton.style.top = Math.random() * window.innerHeight + 'px';
+            noButton.style.left = Math.random() * window.innerWidth + 'px';
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">LOVE</div>
+    </header>
+
+    <div class="container">
+        <div id="head">
+            <h1>Do you love me</h1><br>
+            <p id="accept"></p>
+        </div>
+        
+        <div class="btn" id="head">
+            <button type="button" onclick="submitLoveRequest()">Yes</button>
+            <button id="no" onmouseover="moveNoButton()">No</button>
+        </div>
+    </div>
+
+    <footer>
+        &copy;Aravind all rights reserved
+    </footer>
+</body>
+</html>
