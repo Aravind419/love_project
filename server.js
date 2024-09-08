@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors'); 
 const path = require('path');
+require('dotenv').config(); // Load environment variables from a .env file
 
 const app = express();
 
@@ -12,7 +13,7 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://Aravind:Aravind@2041@cluster0.ykz5b.mongodb.net/', {
+mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {
@@ -47,7 +48,7 @@ app.post('/api/users', async (req, res) => {
 });
 
 // Start the server
-const PORT = 3000;
+const PORT = process.env.PORT || 3000; // Use environment variable or default to 3000
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
